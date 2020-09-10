@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container"><h1>buraya giriş yapmak için bir form gelecek</h1>
+  {% from "/includes/formhelper.html" import render_field %}
+<form method="POST">
+    {{ render_field(form.username) }}
+    {{ render_field(form.password) }}
+<a href="index.html" type="button" >Giriş Yap</a>
+
+</form>
+</div>
+{% endblock body %}

@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block  body%}
+Burası Kontrol Paneli
+<hr>
+<small> hoşgeldin {{session["username"]}}</small>
+<br>
+{% if  articles%}
+<table class="table table-hover">
+ <thead>
+    <tr>
+      <th scope="col">İd</th>
+      <th scope="col">Başlık</th>
+      <th scope="col">İçerik</th>
+      <th scope="col">Tarih</th>
+    </tr>
+  </thead>
+    <tbody>
+
+    {% for article in articles  %}
+     
+ 
+    <tr>
+      <th scope="row">{{article.id}}</th>
+      <td><a href="/article/{{article.id}}">{{article.title}}</a></td>
+      <td>{{article.content}}</td>
+      <td>{{article.created_date}}</td>
+      <td><a href="/edit/{{article.id}}" class="btn btn-info">Güncelle</a></td>
+      <td><a href="/delete/{{article.id}}" class="btn btn-danger">Sil</a></td>
+
+    </tr>
+
+    {% endfor %}
+     </tbody>
+    </table>
+{% else %}
+    <div class="container"> Henüz makale bulunamadı</div>
+{% endif %}
+<a href="/addarticle" class="btn btn-danger"> Makale Ekle</a>
+{% endblock  %}

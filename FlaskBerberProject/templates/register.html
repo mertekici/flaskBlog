@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container"><h1>buraya KAyıt olmas ile ilgili bir form gelecek</h1>
+<form method=post>
+  <dl>
+  {% from "/includes/formhelper.html" import render_field %}
+
+    {{ render_field(form.name) }}
+    {{ render_field(form.surname) }}
+    {{ render_field(form.username) }}
+    {{ render_field(form.email) }}
+    {{ render_field(form.tel1) }}
+    {{ render_field(form.tel2) }}
+    {{ render_field(form.password) }}
+    {{ render_field(form.confirm) }}
+    {{ render_field(form.accept_tos) }}
+
+
+  </dl>
+  <p><input type=submit value=Kaydol>
+</form>
+
+</div>
+
+
+{% endblock body %}

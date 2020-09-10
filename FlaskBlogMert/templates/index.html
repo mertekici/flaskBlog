@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1> Anasayfam</h1>
+Burası Ana Sayfa İçeriği ile dolacak..........
+<hr>
+{% if session["logged_in"] %}
+hoş geldiniz {{session["username"]}}
+{% else %}
+hoş geldiniz lütfen sitemize kayıt olunuz
+{% endif %}
+
+{% endblock body %}

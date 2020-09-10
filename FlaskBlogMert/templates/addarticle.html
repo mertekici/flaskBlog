@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+<{% block  body%}
+
+{% from "includes/formhelpers.html" import render_field %}
+<form method="post">
+  <dl>
+    {{ render_field(form.baslik,class="form-control") }}
+    {{ render_field(form.makale,class="form-control",rows="15") }}
+           <script>
+                        CKEDITOR.replace( 'makale' );
+                </script>
+  </dl>
+  <p><button type="submit" class="btn btn-danger">Makale Ekle</button>
+
+  
+</form>
+{% endblock  %}
